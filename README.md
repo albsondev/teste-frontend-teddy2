@@ -1,4 +1,4 @@
-# Teddy-Teste Front End v3
+# Desafio - Frontend - Teddy Open Finance
 
 Este projeto implementa um sistema de cadastro de parceiros integrados em nossas aplicações. Ele foi desenvolvido seguindo o conceito de micro front-ends, dividindo as funcionalidades em dois projetos separados: um em Angular 15 e outro em React.js.  Essa arquitetura permite que diferentes times trabalhem de forma independente em cada parte do sistema.
 
