@@ -1,0 +1,25 @@
+.pager_wrapper {
+  display: flex;
+
+  margin-top: 20px;
+
+  gap: 8px;
+
+  align-self: center;
+}
+
+.pager_item {
+  padding: 8px 12px;
+
+  border-radius: 4px;
+
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.pager_item.selected {
+  background-color: var(--primary);
+  color: var(--white);
+}

@@ -1,0 +1,28 @@
+.default_input {
+  width: calc(100% - 4px);
+
+  padding: 16px 20px;
+
+  margin: 2px;
+
+  outline: 2px solid var(--gray-100);
+
+  background-color: transparent;
+
+  border-radius: 4px;
+  border: none;
+
+  font-size: 1.5rem;
+}
+
+.default_input::placeholder {
+  color: var(--gray-300);
+}
+
+.default_input.xl::placeholder {
+  font-size: 1.5rem;
+}
+
+.default_input.lg::placeholder {
+  font-size: 1rem;
+}

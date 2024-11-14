@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  host:
+    build:
+      context: root
+      dockerfile: ./Dockerfile
+    ports:
+      - "9000:9000"
+    links:
+      - welcome
+      - nav
+      - clients
+      - selected_clients
+  welcome:
+    build:
+      context: welcome
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+  nav:
+    build:
+      context: nav
+      dockerfile: ./Dockerfile
+    ports:
+      - "8081:8081"
+  clients:
+    build:
+      context: clients
+      dockerfile: ./Dockerfile
+    ports:
+      - "8082:8082"
+  selected_clients:
+    build:
+      context: selected_clients
+      dockerfile: ./Dockerfile
+    ports:
+      - "8083:8083"

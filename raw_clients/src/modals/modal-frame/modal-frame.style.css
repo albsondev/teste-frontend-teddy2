@@ -1,0 +1,144 @@
+.modal_wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+.modal_backdrop {
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  z-index: 1;
+
+  background-color: var(--backdrop);
+
+  animation-name: Fade;
+  animation-duration: 0.3s;
+}
+
+.modal_backdrop.closed {
+  background-color: transparent;
+
+  animation-name: Fade-reverse;
+  animation-duration: 0.3s;
+}
+
+.modal_container {
+  width: 30%;
+
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  padding: 20px;
+
+  gap: 10px;
+
+  background-color: var(--white);
+
+  border-radius: 4px;
+
+  opacity: 1;
+
+  animation-name: Appear;
+  animation-duration: 0.3s;
+}
+
+.modal_container.closed {
+  opacity: 0;
+
+  animation-name: Appear-reverse;
+  animation-duration: 0.3s;
+}
+
+.modal_top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 5px;
+}
+
+.cross_clickable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4px;
+
+  border-radius: 200px;
+
+  cursor: pointer;
+}
+
+.cross_1 {
+  width: 16px;
+  height: 2px;
+
+  margin: 7px 0;
+
+  background-color: var(--black);
+
+  border-radius: 200px;
+
+  transform: rotate(-45deg);
+}
+
+.cross_2 {
+  width: 16px;
+  height: 2px;
+
+  background-color: var(--black);
+
+  position: absolute;
+
+  border-radius: 200px;
+
+  transform: rotate(45deg);
+}
+
+@keyframes Fade {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--backdrop);
+  }
+}
+
+@keyframes Fade-reverse {
+  from {
+    background-color: var(--backdrop);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes Appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes Appear-reverse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declarationDir": "dist",
+    "skipLibCheck": true
+  },
+  "files": ["src/teddy-raw-clients.tsx"],
+  "include": ["src/**/*", "../selected_clients/src/hooks/useFocusEffect.ts"],
+  "exclude": ["src/**/*.test*"]
+}
