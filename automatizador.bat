@@ -48,9 +48,9 @@ for %%d in %directories% do (
     )
 )
 
-REM Terceiro Passo: Abre o navegador no localhost:1234 após todos os projetos serem iniciados
+REM Terceiro Passo: Abre o navegador no localhost:9000 após todos os projetos serem iniciados
 echo Opening project in the default browser...
-rundll32 url.dll,FileProtocolHandler "http://localhost:1234"
+rundll32 url.dll,FileProtocolHandler "http://localhost:9000"
 
 echo All projects have been started and the browser has been opened.
 
