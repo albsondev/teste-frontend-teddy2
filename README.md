@@ -1,38 +1,100 @@
-# Teste de Front-End - Teddy Open Finance
-## Tecnologias
-- [Single-SPA](https://single-spa.js.org/docs/getting-started-overview/)
-- [TypeScript](https://www.typescriptlang.org/)
-## Requisitos
-- [Node.JS](https://nodejs.org/en/download)
-- [Git](https://git-scm.com/downloads)
-## Iniciando a aplicação
-### Faça o clone do repositório e acesse o diretório
+# Teddy-Teste Front End v3
+
+Este projeto implementa um sistema de cadastro de parceiros integrados em nossas aplicações. Ele foi desenvolvido seguindo o conceito de micro front-ends, dividindo as funcionalidades em dois projetos separados: um em Angular 15 e outro em React.js.  Essa arquitetura permite que diferentes times trabalhem de forma independente em cada parte do sistema.
+
+## Descrição do Sistema
+
+O sistema permite cadastrar parceiros com suas informações, onde são utilizados e quais clientes são atendidos.  Ele se integra com duas APIs externas para persistir os dados.
+
+## Tecnologias Utilizadas
+
+* **Single-SPA:** Para gerenciar as diferentes aplicações em um único contexto.
+* **React.js:** Utilizado para o módulo de cadastro e listagem de empresas externas.
+* **Typescript:** Para desenvolver as aplicações em TypeScript.
+* **HTML5 & CSS3:**  Utilizados para a landing page inicial.
+* **Docker:**  O projeto está preparado para ser executado em contêineres, facilitando o deploy em ambientes cloud como AWS ECS.
+
+## APIs
+
+O sistema consome as seguintes APIs:
+
+* Parceiros: `https://644060ba792fe886a88de1b9.mockapi.io/v1/test/partners`
+* Empresas Externas: `https://655cf25525b76d9884fe3153.mockapi.io/v1/external-companies`
+
+Ambas as APIs possuem os seguintes endpoints:
+
+* `GET /`: Listar todos
+* `GET /:id`: Listar um por ID
+* `POST /`: Cadastrar
+* `PUT /:id`: Atualizar
+* `DELETE /:id`: Deletar
+
+## Funcionalidades
+
+* **Login:**  Com opção de digitar usuário e senha. O login redireciona para a página inicial. Possui funcionalidade "Manter conectado" que salva o usuário em cookie (se marcado) ou local storage (se não marcado).
+* **Cadastro de Parceiro:** Permite cadastrar novos parceiros.
+* **Listagem de Parceiros:** Exibe os parceiros cadastrados em uma tabela com paginação e ações para editar/deletar.
+* **Sobre a Aplicação:**  Página com informações sobre o projeto.
+* **Sair:**  Redireciona para a página de login.
+
+## Rodando o Projeto
+
+#### Antes de tudo, para poder rodar o projeto, é necessário ter o Docker instalado em sua máquina.
+#### Para instalar o Docker, acesse o site oficial do Docker e siga as instruções.
+
+### Após instalar o Docker, execute os seguintes comandos no terminal:
+(Você terá que entrar na pasta de cada projeto para executar os comandos)
 
 ```bash
-  $ git clone https://github.com/Nitael-dev/teddy_teste_front_end.git
-  $ cd teddy_test_front_end
-  $ cd teddy_teste_front_end
+  $ cd intro && yarn
+```
+```bash
+  $ cd nav_bar && yarn
+```
+```bash
+  $ cd raw_clients && yarn
+```
+```bash
+  $ cd selected_clients && yarn
+```
+```bash
+  $ cd root && yarn
 ```
 
-### Instale as dependências dos modulos da aplicação em diferentes terminais (Ctrl + T, Ctrl + Shift + T ou Command + T)
+Após instalar as dependências, execute o comando abaixo (em cada pasta/projeto) para iniciar o projeto:
+
 ```bash
-  $ cd root && yarn && yarn start
+  $ cd intro && yarn start
 ```
 ```bash
-  $ cd welcome && yarn && yarn start
+  $ cd nav_bar && yarn start
 ```
 ```bash
-  $ cd nav && yarn && yarn start
+  $ cd raw_clients && yarn start
 ```
 ```bash
-  $ cd clients && yarn && yarn start
+  $ cd selected_clients && yarn start
 ```
 ```bash
-  $ cd selected_clients && yarn && yarn start
+  $ cd root && yarn start
 ```
-### Acesse a aplicação em qualquer Browser
+
+
+### Para acessar a aplicação, basta abrir o navegador e digitar o endereço `[localhost:9000](http://localhost:9000/)
 ```bash
   http://localhost:9000/
 ```
-### Considerações de finalização e pontos-chave do projeto a ser apresentado
-O projeto foi desenvolvido com todas as funcionalidades propostas, adotei soluções variadas que atenderam às exigências de uso das tecnologias requeridas. Devido a arquitetura modular do single-spa, houve uma certa repetição de componentes e padronizações realizadas. Mantive o foco sempre em criar soluções rápidas e eficazes para os diversos cenários enfrentados durante o desenvolvimento da aplicação, mantendo a excelência e qualidade do código entregue. O compromisso com as especificações do desafio e os Bônus foram a prioridade ao longo de todo o processo, onde encontrei peculiariadades do ambiente dos microfrontends, containerizações e reaproveitamento de componentes dinâmicos. Também gostaria de relatar um impedimento no consumo de API proposta por restrições de CORS, porém, todas as funcionalidades realizadas fielmente aos DTO's e Payloads encontrados na documentação fornecida.
+
+## Deploy
+
+* **Vercel:** [URL do deploy no Vercel](https://dasafio-frontend-teddy.vercel.app/)
+
+## Vídeo
+
+[\[Veja Vídeo explicativo do Projeto\]](https://youtu.be/mR1pqeSXkvc)
+
+## Síntese e destaques do projeto
+
+Ao longo do desenvolvimento, todas as funcionalidades planejadas foram entregues, cumprindo integralmente as exigências técnicas e os requisitos de tecnologia. A arquitetura modular do single-spa foi uma escolha que favoreceu a flexibilidade e escalabilidade, apesar de gerar alguma repetição de componentes e padronizações necessárias. Priorizei soluções rápidas e eficazes para cada cenário enfrentado, mantendo o foco na qualidade e atendendo às especificações do desafio, bem como aos requisitos adicionais (bônus).
+
+O ambiente de microfrontends apresentou desafios, principalmente relacionados à containerização e ao reaproveitamento de componentes dinâmicos, que foram tratados com atenção para garantir a integridade do sistema. Embora restrições de CORS tenham limitado o consumo direto da API proposta, todas as funcionalidades foram implementadas de acordo com os DTOs e payloads definidos na documentação fornecida.
