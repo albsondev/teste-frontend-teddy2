@@ -30,6 +30,7 @@ export default function Root(props) {
     };
     await setCookie("clients_list", JSON.stringify(newClient));
     singleSpa.navigateToUrl("/home/raw-clients");
+    await setCookie("user_name", name);
   };
 
   return (

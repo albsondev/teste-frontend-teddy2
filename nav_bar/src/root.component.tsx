@@ -1,6 +1,7 @@
 import * as singleSpa from "single-spa";
 
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 
 import "./root.style.css";
 import LogoPNG from "./assets/logo.png";
@@ -10,6 +11,8 @@ export default function Root(props) {
     document.URL.search("raw-clients") !== -1 ? 0 : 1
   );
   const [showFloat, setShowFloat] = useState<boolean | null>(null);
+  const [cookies] = useCookies(["user_name"]);
+  const userName = cookies.user_name || "Usuário";
 
   const handleNav = async (index?: number) => {
     setSelected(index);
@@ -99,8 +102,8 @@ export default function Root(props) {
           </a>
         </div>
         <div className="header_user_info">
-          Olá
-          <strong className="header_user_name">, Usuário!</strong>
+          Olá,&nbsp;
+          <strong className="header_user_name">{userName}!</strong>
         </div>
         <div
           onClick={() => {
