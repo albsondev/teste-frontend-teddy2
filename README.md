@@ -1,10 +1,10 @@
 # Desafio - Frontend - Teddy Open Finance
 
-Este projeto implementa um sistema de cadastro de parceiros integrados em nossas aplicações. Ele foi desenvolvido seguindo o conceito de micro front-ends, dividindo as funcionalidades em dois projetos separados: um em Angular 15 e outro em React.js.  Essa arquitetura permite que diferentes times trabalhem de forma independente em cada parte do sistema.
+Este projeto implementa um sistema de cadastro de usuários/parceiros integrados em nossas aplicações. Ele foi desenvolvido seguindo o conceito de micro front-ends, dividindo as funcionalidades em dois projetos separados: um em Angular 15 e outro em React.js.  Essa arquitetura permite que diferentes times trabalhem de forma independente em cada parte do sistema.
 
 ## Descrição do Sistema
 
-O sistema permite cadastrar parceiros com suas informações, onde são utilizados e quais clientes são atendidos.  Ele se integra com duas APIs externas para persistir os dados.
+O sistema permite cadastrar usuários com suas informações, onde são utilizados e quais clientes são atendidos.  Ele se integra com duas APIs externas para persistir os dados.
 
 ## Tecnologias Utilizadas
 
@@ -18,8 +18,8 @@ O sistema permite cadastrar parceiros com suas informações, onde são utilizad
 
 O sistema consome as seguintes APIs:
 
-* Parceiros: `https://644060ba792fe886a88de1b9.mockapi.io/v1/test/partners`
-* Empresas Externas: `https://655cf25525b76d9884fe3153.mockapi.io/v1/external-companies`
+* Usuários: `https://boasorte.teddybackoffice.com.br/users`
+
 
 Ambas as APIs possuem os seguintes endpoints:
 
@@ -32,8 +32,8 @@ Ambas as APIs possuem os seguintes endpoints:
 ## Funcionalidades
 
 * **Login:**  Com opção de digitar usuário e senha. O login redireciona para a página inicial. Possui funcionalidade "Manter conectado" que salva o usuário em cookie (se marcado) ou local storage (se não marcado).
-* **Cadastro de Parceiro:** Permite cadastrar novos parceiros.
-* **Listagem de Parceiros:** Exibe os parceiros cadastrados em uma tabela com paginação e ações para editar/deletar.
+* **Cadastro de Usuário:** Permite cadastrar novos usuários.
+* **Listagem de Usuários:** Exibe os usuários cadastrados em uma tabela com paginação e ações para editar/deletar.
 * **Sobre a Aplicação:**  Página com informações sobre o projeto.
 * **Sair:**  Redireciona para a página de login.
 
